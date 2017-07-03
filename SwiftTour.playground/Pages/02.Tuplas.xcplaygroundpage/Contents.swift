@@ -38,6 +38,32 @@ let (_, resto2) = intDiv(5, 2)
 
 
 
+// Tuplas de N Elementos
+
+(3,4,"kjshda") //3 tupla
+(1,2,3,"pee") // 4 tupla
+(1) // 1 tupla. NO existe
+()  // 0 tupla Pues si existe. Significa nada, es como void en otros lenguajes
+
+func test() -> (){
+    
+}
+
+func test1(){
+    
+}
+
+func test2() -> Void{
+    
+}
+
+let uno = test()
+let dos = test1()
+let tres = test2()
+
+
+
+
 
 //: [Next](@next)
 

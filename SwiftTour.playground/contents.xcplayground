@@ -3,5 +3,6 @@
     <pages>
         <page name='01.Tipos'/>
         <page name='02.Tuplas'/>
+        <page name='03.Structs'/>
     </pages>
 </playground>
