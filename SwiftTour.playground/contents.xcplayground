@@ -4,5 +4,7 @@
         <page name='01.Tipos'/>
         <page name='02.Tuplas'/>
         <page name='03.Structs'/>
+        <page name='04.Protocolos-extensiones'/>
+        <page name='05.Clases'/>
     </pages>
 </playground>
