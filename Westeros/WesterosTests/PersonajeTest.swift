@@ -13,6 +13,7 @@ import XCTest
 class PersonajeTest: XCTestCase {
     
     var starkHouse : House!  
+    var  ned : Personaje!
     
     
     override func setUp() {
@@ -20,6 +21,8 @@ class PersonajeTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         starkHouse = House(name: "Stark", sigil: Sigil(descrip: "Rampam Lion", image: #imageLiteral(resourceName: "lannister.jpg")), words: "Winter is comming!")
+        ned = Personaje(name: "Edduar",alias: "Ned", house: starkHouse )
+        
         
     }
     
@@ -37,5 +40,10 @@ class PersonajeTest: XCTestCase {
         XCTAssertNotNil(ned)
     }
     
+    //Testeamos la variable computada FullName
+    func testFullName(){
         
+        XCTAssertEqual(ned.fullName,"Edduar of Stark")
+    }
+    
 }

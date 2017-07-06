@@ -13,9 +13,35 @@ import XCTest
 
 class HouseTest: XCTestCase {
     
+    var starkImage : UIImage!
+    var lanisterImage : UIImage!
+    var starSigil : Sigil!
+    var Lannistersigil : Sigil!
+    var starkHouse : House!
+    var LannisterHouse:House!
+    var robb : Personaje!
+    var atya : Personaje!
+    var tyrion : Personaje!
+    
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        
+        starkImage = #imageLiteral(resourceName: "codeIsComing.png")
+        lanisterImage = #imageLiteral(resourceName: "lannister.jpg")
+        
+        starSigil = Sigil(descrip: "DireWolf", image: starkImage)
+        Lannistersigil = Sigil(descrip: "Rampam Lion", image: lanisterImage)
+        
+        starkHouse = House(name: "Stark", sigil: starSigil, words: "Hear my Hert")
+        LannisterHouse = House(name: "Lannister", sigil: Lannistersigil, words: " I love Lannister House!")
+        
+        robb = Personaje(name: "Robb", alias: "The Young wolf", house: starkHouse)
+        atya = Personaje(name: "Atya", house: starkHouse)
+        tyrion = Personaje(name: "tyrion", alias: "The Imp", house: LannisterHouse)
+        
     }
     
     override func tearDown() {
@@ -41,5 +67,15 @@ class HouseTest: XCTestCase {
         XCTAssertNotNil(sigil2)
     }
     
+    //Test de añadir personas
+    func testAddPersons(){
+        XCTAssertEqual(starkHouse.count, 0)
+        starkHouse.add(person: robb)
+        XCTAssertEqual(starkHouse.count, 1)
+        starkHouse.add(person: atya)
+        XCTAssertEqual(starkHouse.count, 2)
+        starkHouse.add(person: tyrion)
+        XCTAssertEqual(starkHouse.count, 2)
+    }
     
 }

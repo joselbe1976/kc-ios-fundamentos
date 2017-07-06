@@ -8,8 +8,8 @@
 
 import Foundation
 
-//Clase Actor
-final class Personaje{
+//Clase Personaje
+final class Personaje {
     
     let name : String
     let house : House
@@ -36,13 +36,40 @@ final class Personaje{
     
     
     // inicializadores
-    init(name: String, alias : String, house : House) {
+    init(name: String, alias : String? = nil, house : House) {
         (self.name, self._alias, self.house)=(name, alias, house)
     }
     
-   init(name: String, house : House) {
-        (self.name,  self.house)=(name, house)
-        _alias = nil
+
+}
+
+
+extension Personaje{
+    
+    var fullName: String{
+        
+        get{
+            return "\(self.name) of \(self.house.name)"
+        }
     }
- 
+}
+
+extension Personaje{
+    var proxy : String{
+        return "\(name) \(alias) \(house.name)"
+    }
+}
+
+extension Personaje : Hashable{
+    var hashValue : Int {
+        get{
+            return proxy.hashValue
+        }
+    }
+}
+
+extension Personaje : Equatable{
+    static func ==(lhs: Personaje , rhs: Personaje) -> Bool{
+        return lhs.proxy == rhs.proxy
+    }
 }
