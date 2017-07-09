@@ -78,4 +78,37 @@ class HouseTest: XCTestCase {
         XCTAssertEqual(starkHouse.count, 2)
     }
     
+    
+    //Test Comparable de Houses
+    func  testEquatable(){
+            XCTAssertEqual(starkHouse, starkHouse)  //Son iguales
+            XCTAssertNotEqual(starkHouse, LannisterHouse) //No seon Iguales
+    }
+    
+    //testamos el Table Model de House
+    func testHouseTableModel(){
+        let houses : HousesTableModel = HousesTableModel()
+        
+        XCTAssertEqual(houses.count, 0)
+        houses.add(house: starkHouse)
+        XCTAssertEqual(houses.count, 1)
+        houses.add(house: LannisterHouse)
+        XCTAssertEqual(houses.count, 2)
+        houses.add(house: LannisterHouse)
+        XCTAssertEqual(houses.count, 2)
+
+     
+    }
+    
+    // Test casas Henores
+    func  testHouseMinor(){
+        XCTAssertEqual(starkHouse.countMinorHouses, 0)
+        starkHouse.addMinorHouse(house: LannisterHouse)
+        XCTAssertEqual(starkHouse.countMinorHouses, 1)
+        
+    }
+    
+    
+    
+    
 }

@@ -23,6 +23,7 @@ final class House {
     let sigil :  Sigil
     let words : Words
     private var _members : Members //miembros de la casa
+    private var _minorHouses : HousesTableModel
     
     
 
@@ -31,10 +32,11 @@ final class House {
         (self.name,self.sigil,self.words) = (name, sigil, words)
 
         _members = Members()
+        _minorHouses = HousesTableModel()
     }
 }
 
-
+//Extension Set personas
 extension House{
     var count : Int{
         return _members.count
@@ -49,6 +51,79 @@ extension House{
         _members.insert(person)
     }
 }
+
+//Extension minor house
+extension House{
+    var countMinorHouses : Int{
+        return _minorHouses.count
+    }
+    
+    func  addMinorHouse(house: House) {
+        
+        NSLog(house.proxy)
+        NSLog(self.proxy)
+        
+        //control que si es la misma casa No se añade.
+        guard house.proxy != self.proxy else{
+            return
+        }
+        _minorHouses.add(house: house)
+    }
+
+}
+
+extension House{
+    var proxy : String{
+        return "\(name) \(words)"
+    }
+}
+
+
+extension House : Hashable{
+    var hashValue : Int {
+        get{
+            return proxy.hashValue
+        }
+    }
+}
+
+extension House : Equatable{
+    static func ==(lhs: House , rhs: House) -> Bool{
+        return lhs.proxy == rhs.proxy
+    }
+}
+
+extension House : Comparable{
+    static func <(lhs: House, rhs: House) -> Bool{
+        return lhs.name > rhs.name
+    }
+}
+
+
+// Clase de Modelo
+
+typealias Houses = Set<House>
+
+final class HousesTableModel{
+    
+    private var _houses : Houses
+
+    init(){
+        _houses = Houses()
+    }
+
+    var count : Int{
+        return _houses.count
+    }
+    
+    func  add(house: House) {
+        
+        _houses.insert(house)
+    }
+    
+}
+
+
 
 
 
