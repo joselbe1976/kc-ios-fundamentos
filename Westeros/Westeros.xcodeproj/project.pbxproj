@@ -16,6 +16,8 @@
 		D8E818B71F0EC86F008F0BF9 /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E818B51F0EC86F008F0BF9 /* codeIsComing.png */; };
 		D8E818B91F0ECA89008F0BF9 /* Personaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E818B81F0ECA89008F0BF9 /* Personaje.swift */; };
 		D8E818BB1F0ECAAA008F0BF9 /* PersonajeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E818BA1F0ECAAA008F0BF9 /* PersonajeTest.swift */; };
+		D8E846D31F141291003BE1C8 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E846D11F141291003BE1C8 /* HouseViewController.swift */; };
+		D8E846D41F141291003BE1C8 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E846D21F141291003BE1C8 /* HouseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		D8E818B51F0EC86F008F0BF9 /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
 		D8E818B81F0ECA89008F0BF9 /* Personaje.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Personaje.swift; sourceTree = "<group>"; };
 		D8E818BA1F0ECAAA008F0BF9 /* PersonajeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonajeTest.swift; sourceTree = "<group>"; };
+		D8E846D11F141291003BE1C8 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		D8E846D21F141291003BE1C8 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		D8616E7C1F0C47ED004C3E63 /* Westeros */ = {
 			isa = PBXGroup;
 			children = (
+				D8E846D01F141153003BE1C8 /* Controllers */,
 				D8E818B31F0EC850008F0BF9 /* images */,
 				D8E818B21F0EC246008F0BF9 /* Models */,
 				D8616E7D1F0C47ED004C3E63 /* AppDelegate.swift */,
@@ -119,6 +124,15 @@
 				D8E818B51F0EC86F008F0BF9 /* codeIsComing.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		D8E846D01F141153003BE1C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8E846D11F141291003BE1C8 /* HouseViewController.swift */,
+				D8E846D21F141291003BE1C8 /* HouseViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +223,7 @@
 			files = (
 				D8E818B61F0EC86F008F0BF9 /* lannister.jpg in Resources */,
 				D8616E881F0C47ED004C3E63 /* LaunchScreen.storyboard in Resources */,
+				D8E846D41F141291003BE1C8 /* HouseViewController.xib in Resources */,
 				D8616E851F0C47ED004C3E63 /* Assets.xcassets in Resources */,
 				D8E818B71F0EC86F008F0BF9 /* codeIsComing.png in Resources */,
 			);
@@ -231,6 +246,7 @@
 				D8E818B91F0ECA89008F0BF9 /* Personaje.swift in Sources */,
 				D8E818B11F0EC23A008F0BF9 /* House.swift in Sources */,
 				D8616E7E1F0C47ED004C3E63 /* AppDelegate.swift in Sources */,
+				D8E846D31F141291003BE1C8 /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
