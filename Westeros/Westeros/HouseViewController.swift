@@ -14,28 +14,35 @@ class HouseViewController: UIViewController {
     @IBOutlet weak var HouseWords: UILabel!
     @IBOutlet weak var Imagen : UIImageView!
 
+    
+    
+    // Modelo 
+    
+    let model : House
+    
+    
+    init(model: House){
+            self.model = model
+        
+            super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    //asignacion Modelo => View Items
+    func asignarValues(){
+        
+        self.houseName.text = "House \(self.model.name)"
+        self.HouseWords.text = self.model.words
+        self.Imagen.image = self.model.sigil.image
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         
-        super.viewWillAppear(animated)
-        
+        self.asignarValues()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-
 }
