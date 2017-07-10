@@ -21,11 +21,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.blue
         
-        // Creamos el ROOT VIEW CONTROLLER
+        // Creamos el Modelos
         
-        let rootVC = UIViewController()
+        let starkImage : UIImage  = #imageLiteral(resourceName: "codeIsComing.png")
+        let  lanisterImage : UIImage = #imageLiteral(resourceName: "lannister.jpg")
+        var starSigil : Sigil!
+        var starkHouse : House!
+        var Lannistersigil : Sigil!
+        var LannisterHouse:House!
+
         
-        window?.rootViewController = rootVC
+        starSigil = Sigil(descrip: "DireWolf", image: starkImage)
+        Lannistersigil = Sigil(descrip: "Rampam Lion", image: lanisterImage)
+        
+        starkHouse = House(name: "Stark", sigil: starSigil, words: "Hear my Hert")
+        LannisterHouse = House(name: "Lannister", sigil: Lannistersigil, words: " I love Lannister House!")
+        
+        
+        
+        //creamos convinador Tab
+        
+        
+        let vc1 = HouseViewController(model: starkHouse)
+        let vc2 = HouseViewController(model: LannisterHouse)
+        
+        
+        
+        
+        vc1.tabBarItem =  UITabBarItem(title: "starkHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 0)
+        vc2.tabBarItem =  UITabBarItem(title: "LannisterHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 1)
+        
+        let TabVC = UITabBarController()
+        TabVC.viewControllers = [ vc1, vc2]
+        
+        
+        
+        
+        //Asigamos el Root
+        window?.rootViewController = TabVC
+        
         
         
         // Override point for customization after application launch.

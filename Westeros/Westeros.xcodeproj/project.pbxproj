@@ -18,6 +18,8 @@
 		D8E818BB1F0ECAAA008F0BF9 /* PersonajeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E818BA1F0ECAAA008F0BF9 /* PersonajeTest.swift */; };
 		D8E846D31F141291003BE1C8 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E846D11F141291003BE1C8 /* HouseViewController.swift */; };
 		D8E846D41F141291003BE1C8 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E846D21F141291003BE1C8 /* HouseViewController.xib */; };
+		D8E846D61F143968003BE1C8 /* tabs.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E846D51F143968003BE1C8 /* tabs.png */; };
+		D8E846D81F1439EE003BE1C8 /* info-32.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E846D71F1439EE003BE1C8 /* info-32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		D8E818BA1F0ECAAA008F0BF9 /* PersonajeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonajeTest.swift; sourceTree = "<group>"; };
 		D8E846D11F141291003BE1C8 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		D8E846D21F141291003BE1C8 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
+		D8E846D51F143968003BE1C8 /* tabs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabs.png; sourceTree = "<group>"; };
+		D8E846D71F1439EE003BE1C8 /* info-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-32.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		D8E818B31F0EC850008F0BF9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D8E846D71F1439EE003BE1C8 /* info-32.png */,
+				D8E846D51F143968003BE1C8 /* tabs.png */,
 				D8E818B41F0EC86F008F0BF9 /* lannister.jpg */,
 				D8E818B51F0EC86F008F0BF9 /* codeIsComing.png */,
 			);
@@ -222,8 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E818B61F0EC86F008F0BF9 /* lannister.jpg in Resources */,
+				D8E846D61F143968003BE1C8 /* tabs.png in Resources */,
 				D8616E881F0C47ED004C3E63 /* LaunchScreen.storyboard in Resources */,
 				D8E846D41F141291003BE1C8 /* HouseViewController.xib in Resources */,
+				D8E846D81F1439EE003BE1C8 /* info-32.png in Resources */,
 				D8616E851F0C47ED004C3E63 /* Assets.xcassets in Resources */,
 				D8E818B71F0EC86F008F0BF9 /* codeIsComing.png in Resources */,
 			);
