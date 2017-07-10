@@ -74,7 +74,11 @@ extension House{
 
 extension House{
     var proxy : String{
-        return "\(name) \(words)"
+        return "\(name) \(words) \(count)"
+    }
+
+    var proxyComparable : String{
+        return "\(name) \(words) \(count)"
     }
 }
 
@@ -95,7 +99,7 @@ extension House : Equatable{
 
 extension House : Comparable{
     static func <(lhs: House, rhs: House) -> Bool{
-        return lhs.name > rhs.name
+        return lhs.proxyComparable < rhs.proxyComparable
     }
 }
 

@@ -80,8 +80,15 @@ class HouseTest: XCTestCase {
     
     
     //Test Comparable de Houses
-    func  testEquatable(){
+    func  testEquality(){
+            //identidad
             XCTAssertEqual(starkHouse, starkHouse)  //Son iguales
+        
+            // igualdad
+            let starkHouse2 = House(name: "Stark", sigil: starSigil, words: "Hear my Hert")
+            XCTAssertEqual(starkHouse, starkHouse2)  //Son iguales
+        
+            //Desigualdad
             XCTAssertNotEqual(starkHouse, LannisterHouse) //No seon Iguales
     }
     
@@ -108,6 +115,13 @@ class HouseTest: XCTestCase {
         
     }
     
+    func testHashable(){
+        XCTAssertNotNil(starkHouse.hashValue)
+    }
+    
+    func testHouseComparable(){
+        XCTAssertLessThan(starkHouse, LannisterHouse)
+    }
     
     
     

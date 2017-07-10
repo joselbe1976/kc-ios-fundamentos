@@ -15,6 +15,11 @@ class PersonajeTest: XCTestCase {
     var starkHouse : House!  
     var  ned : Personaje!
     
+    var robb : Personaje!
+    var atya : Personaje!
+    var tyrion : Personaje!
+    
+    
     
     override func setUp() {
         super.setUp()
@@ -22,6 +27,11 @@ class PersonajeTest: XCTestCase {
         
         starkHouse = House(name: "Stark", sigil: Sigil(descrip: "Rampam Lion", image: #imageLiteral(resourceName: "lannister.jpg")), words: "Winter is comming!")
         ned = Personaje(name: "Edduar",alias: "Ned", house: starkHouse )
+        
+        
+        robb = Personaje(name: "Robb", alias: "The Young wolf", house: starkHouse)
+        atya = Personaje(name: "Atya", house: starkHouse)
+        tyrion = Personaje(name: "tyrion", alias: "The Imp", house: starkHouse)
         
         
     }
@@ -45,5 +55,27 @@ class PersonajeTest: XCTestCase {
         
         XCTAssertEqual(ned.fullName,"Edduar of Stark")
     }
+    
+    
+    func testPersonEquility(){
+    
+        // IUdentidad
+        
+        XCTAssertEqual(tyrion , tyrion)
+        
+        // Igualdad
+        
+        let tyrion2 : Personaje = Personaje(name: "tyrion", alias: "The Imp", house: starkHouse)
+        
+        
+        XCTAssertEqual(tyrion , tyrion2)
+        
+        //Desigualdad
+        XCTAssertNotEqual(tyrion , atya)
+        
+    
+        
+    }
+    
     
 }
