@@ -39,27 +39,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        //creamos convinador Tab
-        
+        //Creo los View Controllers
         
         let vc1 = HouseViewController(model: starkHouse)
         let vc2 = HouseViewController(model: LannisterHouse)
         
-        
-        
-        
+        //botones del tab del controlador
         vc1.tabBarItem =  UITabBarItem(title: "starkHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 0)
         vc2.tabBarItem =  UITabBarItem(title: "LannisterHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 1)
         
+        //Creamos el tabController
         let TabVC = UITabBarController()
-        TabVC.viewControllers = [ vc1, vc2]
-        
-        
-        
+        TabVC.viewControllers = [ vc1.getInNavigation(), vc2.getInNavigation()]
         
         //Asigamos el Root
         window?.rootViewController = TabVC
         
+        
+        //proxy apariencia de la App Completa
+        self.proxyAparenceGlobal()
         
         
         // Override point for customization after application launch.
@@ -88,6 +86,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    
+    //Proxy de Apariencia
+    func proxyAparenceGlobal(){
+                UITabBar.appearance().backgroundColor = UIColor.orange
+        
+        
+    }
+    
+    
+    
 
 }
 

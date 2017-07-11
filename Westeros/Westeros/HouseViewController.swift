@@ -44,5 +44,10 @@ class HouseViewController: UIViewController {
         super.viewDidLoad()
         
         self.asignarValues()
+        
+        //Titulo del Navigation controller
+        self.title = self.model.name
+        
+        
     }
 }
