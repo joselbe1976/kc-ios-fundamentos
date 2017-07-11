@@ -23,34 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Creamos el Modelos
         
-        let starkImage : UIImage  = #imageLiteral(resourceName: "codeIsComing.png")
-        let  lanisterImage : UIImage = #imageLiteral(resourceName: "lannister.jpg")
-        var starSigil : Sigil!
-        var starkHouse : House!
-        var Lannistersigil : Sigil!
-        var LannisterHouse:House!
-
-        
-        starSigil = Sigil(descrip: "DireWolf", image: starkImage)
-        Lannistersigil = Sigil(descrip: "Rampam Lion", image: lanisterImage)
-        
-        starkHouse = House(name: "Stark", sigil: starSigil, words: "Hear my Hert")
-        LannisterHouse = House(name: "Lannister", sigil: Lannistersigil, words: " I love Lannister House!")
+        let houses = Repository.local.houses
         
         
         
-        //Creo los View Controllers
         
-        let vc1 = HouseViewController(model: starkHouse)
-        let vc2 = HouseViewController(model: LannisterHouse)
+        var controllers = [UIViewController]() //array vacio controladores
         
-        //botones del tab del controlador
-        vc1.tabBarItem =  UITabBarItem(title: "starkHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 0)
-        vc2.tabBarItem =  UITabBarItem(title: "LannisterHouse", image: #imageLiteral(resourceName: "info-32.png"), tag: 1)
+        for house in houses{
+            controllers.append(HouseViewController(model: house).getInNavigation())
+            
+        }
+        
         
         //Creamos el tabController
         let TabVC = UITabBarController()
-        TabVC.viewControllers = [ vc1.getInNavigation(), vc2.getInNavigation()]
+        TabVC.viewControllers = controllers
         
         //Asigamos el Root
         window?.rootViewController = TabVC
