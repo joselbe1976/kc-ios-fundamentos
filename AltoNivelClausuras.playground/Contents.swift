@@ -74,6 +74,39 @@ evens.sorted { (a: Int, b: Int) -> Bool in
 
 
 
+// Operaciones sobre colecciones con programacion funcional
+// Clasicos de program. Funcional : Map, Filter, flatmap
+
+// Map:  iteraccion para Chuck Norris
+
+var result = [Int]() //Array enteros vacios
+
+for element in evens {
+    result.append(element*4)
+}
+result
+
+// ejemplo con Map
+result = evens.map { $0 * 4 }   //devuelv eunnuevo array con los elementos multiplicado * 4
+
+result
+
+
+
+
+// Filter: elimina ciertos elementos de la coleccion
+
+result = evens.filter {$0 > 6}
+result
+
+
+// FlatMap : un map  que se salta los niles
+
+let intsOrNil : [Int?]  = [1,2,nil,4,7,nil]
+
+let data = intsOrNil.flatMap {$0?.hashValue}
+data
+
 
 
 
