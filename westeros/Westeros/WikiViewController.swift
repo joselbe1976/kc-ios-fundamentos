@@ -43,18 +43,12 @@ final class WikiViewController: UIViewController {
       
     }
     
-
-    
+ 
     // Sincronizacion de la vista
     func syncModelView(){
         title = "Wiki"
         self.browser.loadRequest(URLRequest(url: self.model.wiki))
     }
-   
-    
-    
-   
-    
 }
 
 

@@ -62,6 +62,12 @@ extension House{
             add(person: person)
         }
     }
+    
+    func getSortedmembers() -> [Person]{
+        let memberArray : [Person] = Array(_members)
+        
+        return memberArray.sorted() 
+    }
 }
 
 extension House{
