@@ -47,7 +47,7 @@ class RepositoryTests: XCTestCase {
     }
     
     func testHouseFiltering(){
-        let filtered = Repository.local.houses.filter{ $0.count == 1}
+        let filtered = Repository.local.houses(filteredBy: {$0.count == 1})
         XCTAssertEqual(filtered.count, 1)
     }
     
