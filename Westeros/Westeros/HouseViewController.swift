@@ -2,52 +2,89 @@
 //  HouseViewController.swift
 //  Westeros
 //
-//  Created by JOSE LUIS BUSTOS ESTEBAN on 10/7/17.
-//  Copyright © 2017 jose luis Bustos. All rights reserved.
+//  Created by Fernando Rodriguez on 7/10/17.
+//  Copyright © 2017 Keepcoding. All rights reserved.
 //
 
 import UIKit
 
 class HouseViewController: UIViewController {
-    
-    @IBOutlet weak var houseName: UILabel!
-    @IBOutlet weak var HouseWords: UILabel!
-    @IBOutlet weak var Imagen : UIImageView!
 
+    @IBOutlet weak var houseNameView: UILabel!
     
+    @IBOutlet weak var wordsTextView: UILabel!
     
-    // Modelo 
+    @IBOutlet weak var sigilImageView: UIImageView!
+    
     
     let model : House
     
-    
     init(model: House){
-            self.model = model
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+        title = model.name
         
-            super.init(nibName: nil, bundle: nil)
     }
     
+    // Chapuza de los de Cupertino (relacionada con los nil)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 
-    //asignacion Modelo => View Items
-    func asignarValues(){
+    func syncViewWithModel(){
+        // model -> view
+        houseNameView.text = "House \(model.name)"
+        sigilImageView.image = model.sigil.image
+        wordsTextView.text = model.words
         
-        self.houseName.text = "House \(self.model.name)"
-        self.HouseWords.text = self.model.words
-        self.Imagen.image = self.model.sigil.image
+        
+    }
+    
+
+    func setupUI(){
+        //añadimos boton al navigation controller
+        
+        let boton = UIBarButtonItem(title: "Wiki", style: .plain, target: self , action: #selector(openWiki))
+        let boton2 = UIBarButtonItem(title: "Personajes", style: .plain, target: self , action: #selector(openListPersonajes))
+        
+        self.navigationItem.rightBarButtonItems = [boton, boton2]
+    }
+    
+    @objc func openWiki(){
+        let vcWiki = WikiViewController(modelo: self.model)
+        self.navigationController?.pushViewController(vcWiki, animated: true)
+        
+    }
+    @objc func openListPersonajes(){
+        
+        let vcPersonas = PersonajesTableViewController(model: self.model.getSortedmembers())
+        self.navigationController?.pushViewController(vcPersonas, animated: true)
+        
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.asignarValues()
+        setupUI()
         
-        //Titulo del Navigation controller
-        self.title = self.model.name
-        
-        
+        syncViewWithModel()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

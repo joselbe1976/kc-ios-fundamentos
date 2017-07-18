@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D8616E791F0C47ED004C3E63"
+               BlueprintIdentifier = "ED853EE31F0C47E100F04AD6"
                BuildableName = "Westeros.app"
                BlueprintName = "Westeros"
                ReferencedContainer = "container:Westeros.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D8616E8D1F0C47ED004C3E63"
+               BlueprintIdentifier = "ED853EF71F0C47E100F04AD6"
                BuildableName = "WesterosTests.xctest"
                BlueprintName = "WesterosTests"
                ReferencedContainer = "container:Westeros.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8616E791F0C47ED004C3E63"
+            BlueprintIdentifier = "ED853EE31F0C47E100F04AD6"
             BuildableName = "Westeros.app"
             BlueprintName = "Westeros"
             ReferencedContainer = "container:Westeros.xcodeproj">
@@ -65,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8616E791F0C47ED004C3E63"
+            BlueprintIdentifier = "ED853EE31F0C47E100F04AD6"
             BuildableName = "Westeros.app"
             BlueprintName = "Westeros"
             ReferencedContainer = "container:Westeros.xcodeproj">
@@ -84,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8616E791F0C47ED004C3E63"
+            BlueprintIdentifier = "ED853EE31F0C47E100F04AD6"
             BuildableName = "Westeros.app"
             BlueprintName = "Westeros"
             ReferencedContainer = "container:Westeros.xcodeproj">

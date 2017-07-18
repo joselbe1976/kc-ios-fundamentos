@@ -2,58 +2,79 @@
 //  Repository.swift
 //  Westeros
 //
-//  Created by JOSE LUIS BUSTOS ESTEBAN on 11/7/17.
-//  Copyright © 2017 jose luis Bustos. All rights reserved.
+//  Created by Fernando Rodriguez on 7/11/17.
+//  Copyright © 2017 Keepcoding. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-final class Repository {
+final class Repository{
     
-    
-    static var local = LocalFactory()
+    static let local = LocalFactory()
 }
 
-
-protocol HouseFactory{
+protocol HouseFactory {
+    
+    typealias Filter = (House)->Bool
+    
     var houses : [House] {get}
-
+    func house(named: String)->House?
+    func houses(filteredBy: Filter) -> [House]
 }
 
 final class LocalFactory : HouseFactory{
     
-    var houses : [House]{
-        get{
-            //Aqui cremoa las casas
-            
-            let starkImage : UIImage  = #imageLiteral(resourceName: "codeIsComing.png")
-            let lanisterImage : UIImage = #imageLiteral(resourceName: "lannister.jpg")
-            var starSigil : Sigil!
-            var Lannistersigil : Sigil!
-            
-            
-            starSigil = Sigil(descrip: "DireWolf", image: starkImage)
-            Lannistersigil = Sigil(descrip: "Rampam Lion", image: lanisterImage)
-            
-            let starkHouse = House(name: "Stark", sigil: starSigil, words: "Hear my Hert")
-            let LannisterHouse = House(name: "Lannister", sigil: Lannistersigil, words: " I love Lannister House!")
-   
-            //personajes
-            let robb = Personaje(name: "Robb", alias: "The Young wolf", house: starkHouse)
-            let atya = Personaje(name: "Atya", house: LannisterHouse)
-            let tyrion = Personaje(name: "tyrion", alias: "The Imp", house: starkHouse)
-            
-            
-            //personajes a las casas
-            starkHouse.add(person: robb)
-            starkHouse.add(person: tyrion)
-            LannisterHouse.add(person: atya)
-            
-            
-            return [starkHouse, LannisterHouse].sorted() //lo devuelvo ordenado
+    func houses(filteredBy: (House) -> Bool) -> [House] {
+        let filtered = Repository.local.houses.filter(filteredBy)
+        return filtered
+    }
 
+    
+
+    var houses: [House]{
+        get{
+            // Aquí es donde te creas tus casas
+            let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+            let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
+            let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSmall.jpg"), description: "Three headed dragon")
             
+            let starkUrl = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            let LanisterUrl = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            let targarianUrl = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            
+            
+            let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!",url: starkUrl)
+            let lannister = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url: LanisterUrl)
+            let targaryen = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire & Blood",url: targarianUrl)
+            
+            let robb = Person(name: "Robb", alias: "The young wolf", house: stark)
+            let arya = Person(name: "Arya", house: stark)
+            
+            let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannister)
+            let jaime = Person(name: "Jaime", alias: "Kinglsayer", house: lannister)
+            let cersei = Person(name: "Cersei", house: lannister)
+            
+            let dani = Person(name: "Daenerys", alias: "Mother of dragons", house: targaryen)
+            
+            // Añadir los personajes a las casas
+            stark.add(persons: robb, arya)
+            lannister.add(persons: tyrion, jaime, cersei)
+            targaryen.add(person: dani)
+            
+            return [stark, lannister, targaryen].sorted()
         }
     }
+    
+    func house(named: String) -> House? {
+        
+        let house = houses.filter{$0.name.uppercased() == named.uppercased()}.first
+        return house
+        
+    }
+    
+    
+
+    
 }
+
+

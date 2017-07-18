@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Westeros
 //
-//  Created by JOSE LUIS BUSTOS ESTEBAN on 5/7/17.
-//  Copyright © 2017 jose luis Bustos. All rights reserved.
+//  Created by Fernando Rodriguez on 7/5/17.
+//  Copyright © 2017 Keepcoding. All rights reserved.
 //
 
 import UIKit
@@ -15,40 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         
-        
+        // Crear Window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = UIColor.blue
+        window?.backgroundColor = UIColor.cyan
         
-        // Creamos el Modelos
-        
+        // Creamos unos modelos
         let houses = Repository.local.houses
         
+       /* Creamos el TabBar
+           let tabVC = UITabBarController()
+           tabVC.viewControllers = houses.map {HouseViewController(model: $0).wrappedInNavigation()}
+        
+         */
+        
+        let dataSources = DataSources.houseDataSource(model: houses)
+        let houseDelegate = Delegates.housesDelegate(model: houses)
+        let housesVC = ArrayTableViewController(datasource: dataSources, delegate: houseDelegate,  style: .plain, title: "Casas").wrappedInNavigation()
+  
         
         
-        
-        var controllers = [UIViewController]() //array vacio controladores
-        
-        for house in houses{
-            controllers.append(HouseViewController(model: house).getInNavigation())
-            
-        }
+        // Asignamos el RootVC
+        window?.rootViewController = housesVC
         
         
-        //Creamos el tabController
-        let TabVC = UITabBarController()
-        TabVC.viewControllers = controllers
-        
-        //Asigamos el Root
-        window?.rootViewController = TabVC
-        
-        
-        //proxy apariencia de la App Completa
-        self.proxyAparenceGlobal()
-        
-        
-        // Override point for customization after application launch.
         return true
     }
 
@@ -74,17 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    
-    
-    //Proxy de Apariencia
-    func proxyAparenceGlobal(){
-                UITabBar.appearance().backgroundColor = UIColor.orange
-        
-        
-    }
-    
-    
-    
 
 }
 
