@@ -27,9 +27,17 @@ class ArrayTableViewController<Element>: UITableViewController {
         
         //datasource de la vista
         tableView.dataSource = self.dataSource
-        tableView.delegate = self.delegate
+        //tableView.delegate = self.delegate
         
         self.title = title
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Ejecutamos la clausura
+        print("selecciona celda")
         
     }
     
