@@ -111,6 +111,14 @@ extension House : Comparable{
     
 }
 
+// MARK : - Protocols
+extension House : CustomStringConvertible{
+    var description: String {
+        return "<\(type(of:self)): \(name)>"
+    }
+    
+}
+
 
 
 

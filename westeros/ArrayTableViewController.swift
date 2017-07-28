@@ -11,7 +11,7 @@ import UIKit
 class ArrayTableViewController<Element>: UITableViewController {
 
     let dataSource : ArrayDataSource<Element>
-    let delegate : ArrayTableViewDelegate<Element>
+    weak var delegate : ArrayTableViewDelegate<Element>?  //referencia al navegador, lo pongo weak
 
     
     init(datasource : ArrayDataSource<Element>, delegate: ArrayTableViewDelegate<Element>, style: UITableViewStyle, title: String){
@@ -33,12 +33,28 @@ class ArrayTableViewController<Element>: UITableViewController {
         
     }
     
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        
+        //registro las posibles celdas personalizadas e identificadores de reuso
+        tableView.register(UINib(nibName: "HousesTableViewCell", bundle: nil), forCellReuseIdentifier: "House")
+        tableView.register(UINib(nibName: "HousesTableViewCell", bundle: nil), forCellReuseIdentifier: "Season")
+        
+        //color de fondo
+        tableView.backgroundColor = UIColor.black
+
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Ejecutamos la clausura
         print("selecciona celda")
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     required init?(coder aDecoder: NSCoder) {

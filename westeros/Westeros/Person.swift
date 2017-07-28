@@ -69,8 +69,14 @@ extension Person : Comparable{
 }
 
 
-
-
+// MARK : -  Protocols
+extension Person : CustomStringConvertible{
+    var description: String {
+        return "<\(type(of: self)): \(fullName)>"
+    }
+    
+    
+}
 
 
 

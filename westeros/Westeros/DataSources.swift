@@ -14,18 +14,18 @@ final class DataSources{
     static func houseDataSource(model: [House]) -> ArrayDataSource<House>{
         
         
-        return ArrayDataSource(model: model, cellMake: { (house: House, tableView : UITableView) -> UITableViewCell in
+        return ArrayDataSource(model: model, cellMake: { (house: House, tableView : UITableView) -> HousesTableViewCell in
             
-            var cell = tableView.dequeueReusableCell(withIdentifier: "House")
-            if cell == nil{
-                cell = UITableViewCell(style: .default, reuseIdentifier: "House")
-            }
+        
             
-            cell?.textLabel?.text = house.name
-            cell?.imageView?.image = house.sigil.image
-            cell?.detailTextLabel?.text = "\(house.count) Miembros"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "House") as! HousesTableViewCell
             
-            return cell!
+            cell.imageView?.image = house.sigil.image
+            cell.titulo.text = house.name
+            cell.descrip.text = house.description
+            
+            
+            return cell
         })
 
      
@@ -47,6 +47,23 @@ final class DataSources{
 
             
             return cell!
+        })
+        
+        
+    }
+    
+    static func SeasonDataSource(model: [Season]) -> ArrayDataSource<Season>{
+        
+        
+        return ArrayDataSource(model: model, cellMake: { (season: Season, tableView : UITableView) -> HousesTableViewCell in
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Season") as! HousesTableViewCell
+            
+            cell.imageView?.image = season.image
+            cell.titulo.text = season.name
+            cell.descrip.text = season.descrip
+            
+            return cell
         })
         
         

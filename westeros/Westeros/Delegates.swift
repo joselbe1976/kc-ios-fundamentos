@@ -15,11 +15,29 @@ final class Delegates {
        
         let del = ArrayTableViewDelegate(model: model, delegateMaker: {(house, IndexPath, UITableView) -> UIViewController in
           
-                // Aqui hacemos un push de la pantalla
+            
             
                let vc = HouseViewController(model: house)
             
                return vc
+        })
+        
+        return del
+        
+    }
+    
+    static func  SeasonsDelegate ( model: [Season]) -> ArrayTableViewDelegate<Season>{
+        
+        // Creamos el objeto y la cluasura a ejecutar
+        
+        let del = ArrayTableViewDelegate(model: model, delegateMaker: {(season, IndexPath, UITableView) -> UIViewController in
+            
+            
+            
+          //  let vc = HouseViewController(model: season)
+            let vc = UIViewController()
+            
+            return vc
         })
         
         return del

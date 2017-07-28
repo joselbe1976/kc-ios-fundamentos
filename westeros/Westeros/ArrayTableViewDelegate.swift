@@ -18,7 +18,7 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
     let model : Elements
     let _delegateMaker : DelegateMaker //aqui guardamos la clausuara
     
-    //chapu
+
     var vcPadre : UIViewController?
     
     
@@ -41,6 +41,7 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
   
         //Falta lanzar el viewController ...
         self.vcPadre?.navigationController?.pushViewController(vc, animated: true)
+        
    
     }
     
