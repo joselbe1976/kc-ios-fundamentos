@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Westeros/Repository.swift"
+            timestampString = "523012818.433406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "Seasons(named:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Westeros.LocalFactorySeason.Seasons(named: Swift.String) -&gt; Swift.Optional&lt;Westeros.Season&gt;"
+                  moduleName = "Westeros"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseluisbustosesteban/Desktop/Keepcoding/Master/05.IOS/kc-ios-fundamentos/westeros/Westeros/Repository.swift"
+                  timestampString = "523015640.722636"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Westeros.Season) -&gt; Swift.Bool in Westeros.LocalFactorySeason.Seasons(named: Swift.String) -&gt; Swift.Optional&lt;Westeros.Season&gt;"
+                  moduleName = "Westeros"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseluisbustosesteban/Desktop/Keepcoding/Master/05.IOS/kc-ios-fundamentos/westeros/Westeros/Repository.swift"
+                  timestampString = "523015640.725428"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Westeros/Repository.swift"
+            timestampString = "523012818.433406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "Seasons"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

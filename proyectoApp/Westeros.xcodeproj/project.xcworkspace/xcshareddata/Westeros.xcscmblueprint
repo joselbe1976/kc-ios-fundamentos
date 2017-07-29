@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "36BCC9945CD9FE09D79F261594F3DDF879B29C6B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0C11678A53DFE3A526F395EC24595281E8D5E784" : 9223372036854775807,
+    "36BCC9945CD9FE09D79F261594F3DDF879B29C6B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A1C6735B-5DA9-400D-92E9-E0E2C7339F01",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0C11678A53DFE3A526F395EC24595281E8D5E784" : "",
+    "36BCC9945CD9FE09D79F261594F3DDF879B29C6B" : "westeros\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Westeros",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Westeros.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/joselbe1976\/kc-ios-fundamentos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0C11678A53DFE3A526F395EC24595281E8D5E784"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/agbo\/westeros.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36BCC9945CD9FE09D79F261594F3DDF879B29C6B"
+    }
+  ]
+}
