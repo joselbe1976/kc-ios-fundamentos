@@ -15,15 +15,11 @@ final class Delegates {
        
         let del = ArrayTableViewDelegate(model: model, delegateMaker: {(house, IndexPath, UITableView) -> UIViewController in
           
-            
-            
                let vc = HouseViewController(model: house)
-            
                return vc
         })
         
         return del
-        
     }
     
     static func  SeasonsDelegate ( model: [Season]) -> ArrayTableViewDelegate<Season>{
@@ -34,13 +30,16 @@ final class Delegates {
             
             
             
-          //  let vc = HouseViewController(model: season)
-            let vc = UIViewController()
-            
+            let vc = EpisodesTableViewController.init(modelo: season.getSortedEpisodes())
             return vc
+
+         
         })
         
         return del
         
     }
+    
+    
+    
 }

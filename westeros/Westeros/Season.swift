@@ -16,7 +16,7 @@ final class Season{
     let dateSeason : Date
     let descrip : String //Descripcion de la temporada
     let image       : UIImage //foto de la temporada
-    var _episodes : Capitulos //capitulos de la temporada
+    private var _episodes : Capitulos //capitulos de la temporada
     
     init(name : String, dateSeason : Date, descrip : String, image: UIImage){
         self.name = name
@@ -59,7 +59,7 @@ extension Season{
         }
     }
     
-    func getSortedmembers() -> [Episode]{
+    func getSortedEpisodes() -> [Episode]{
         let memberArray : [Episode] = Array(_episodes)
         
         return memberArray.sorted()
@@ -70,15 +70,15 @@ extension Season{
 
 
 extension Season{
-    var proxyForEquality : String{
+    var proxyForEquality : Date{
         get{
-            return "\(name)"
+            return dateSeason
         }
     }
     
-    var proxyForComparison : String{
+    var proxyForComparison : Date{
         get{
-            return name.uppercased()
+            return dateSeason
         }
     }
 }

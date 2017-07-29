@@ -20,9 +20,9 @@ final class DataSources{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "House") as! HousesTableViewCell
             
-            cell.imageView?.image = house.sigil.image
+            cell.imageView?.image = resizeImage(image: house.sigil.image, targetSize: CGSize(width: 90, height: 100))
             cell.titulo.text = house.name
-            cell.descrip.text = house.description
+            cell.descrip.text = house.words
             
             
             return cell
@@ -38,15 +38,30 @@ final class DataSources{
         
         return ArrayDataSource(model: model, cellMake: { (person: Person, tableView : UITableView) -> UITableViewCell in
             
+            /*
             var cell = tableView.dequeueReusableCell(withIdentifier: "Person")
             if cell == nil{
                 cell = UITableViewCell(style: .default, reuseIdentifier: "Person")
             }
             
             cell?.textLabel?.text = person.fullName
+            cell?.textLabel?.tintColor = UIColor.white //color blanco
 
             
             return cell!
+ */
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Season") as! HousesTableViewCell
+            
+            
+            cell.imageView?.image = resizeImage(image: #imageLiteral(resourceName: "silueta.gif"), targetSize: CGSize(width: 90, height: 100))
+            cell.titulo.text = person.name
+            cell.descrip.text = person.fullName
+            
+            return cell
+
+            
         })
         
         
@@ -59,7 +74,8 @@ final class DataSources{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Season") as! HousesTableViewCell
             
-            cell.imageView?.image = season.image
+            
+            cell.imageView?.image = resizeImage(image: season.image, targetSize: CGSize(width: 90, height: 100))
             cell.titulo.text = season.name
             cell.descrip.text = season.descrip
             
@@ -68,5 +84,7 @@ final class DataSources{
         
         
     }
+    
+    
 
 }

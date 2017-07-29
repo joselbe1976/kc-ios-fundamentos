@@ -36,15 +36,15 @@ final class Episode{
 
 
 extension Episode{
-    var proxyForEquality : String{
+    var proxyForEquality : Date{
         get{
-            return "\(name) \(SeasonOfEpisode!.name)"
+            return dateEpisode
         }
     }
     
-    var proxyForComparison : String{
+    var proxyForComparison : Date{
         get{
-            return "\(name) \(SeasonOfEpisode!.name)".uppercased()
+            return dateEpisode
         }
     }
 }

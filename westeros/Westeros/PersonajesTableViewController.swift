@@ -25,6 +25,8 @@ class PersonajesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "HousesTableViewCell", bundle: nil), forCellReuseIdentifier: "Person")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,7 +52,7 @@ class PersonajesTableViewController: UITableViewController {
         return self.model.count
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Peronajes"
+        return "Persons"
     }
     
     
@@ -59,6 +61,8 @@ class PersonajesTableViewController: UITableViewController {
         // extraigo el Modelo
         let model : Person = self.model[indexPath.row]
         
+        
+        /*
         //montamos la celda
         var cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier")
         
@@ -68,9 +72,28 @@ class PersonajesTableViewController: UITableViewController {
         
         // Configuramos la celda
         cell?.textLabel?.text = model.name
+        cell?.textLabel?.tintColor = UIColor.white //color blanco
+  
 
         
         return cell!
+ */
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Person") as! HousesTableViewCell
+        
+        
+        cell.imageView?.image = resizeImage(image: #imageLiteral(resourceName: "silueta.gif"), targetSize: CGSize(width: 80, height: 80))
+        cell.titulo.text = model.name
+        cell.descrip.text = model.fullName
+        
+        return cell
+        
+        
+    }
+    
+    
+   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
     
     
