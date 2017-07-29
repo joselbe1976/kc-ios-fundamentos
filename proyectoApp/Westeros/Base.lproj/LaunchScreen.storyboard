@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,16 +25,9 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="default.png" translatesAutoresizingMaskIntoConstraints="NO" id="UQz-bm-Jgf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="kc-code.png" translatesAutoresizingMaskIntoConstraints="NO" id="pSQ-aq-bxP">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="pSQ-aq-bxP" firstAttribute="width" relation="lessThanOrEqual" secondItem="UQz-bm-Jgf" secondAttribute="height" multiplier="25:19" id="gfF-XM-gE8"/>
-                                    <constraint firstItem="pSQ-aq-bxP" firstAttribute="leading" secondItem="UQz-bm-Jgf" secondAttribute="leading" id="pVZ-VK-Vxl"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,6 +44,5 @@
     </scenes>
     <resources>
         <image name="default.png" width="800" height="310"/>
-        <image name="kc-code.png" width="214" height="39"/>
     </resources>
 </document>

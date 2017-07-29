@@ -21,7 +21,6 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
 
     var vcPadre : UIViewController?
     
-    
     init(model: Elements, delegateMaker: @escaping DelegateMaker){
         self.model = model
         self._delegateMaker = delegateMaker
@@ -39,9 +38,23 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
         
         let vc = _delegateMaker(elem, indexPath, tableView)
   
-        //Falta lanzar el viewController ...
-        self.vcPadre?.navigationController?.pushViewController(vc, animated: true)
+        //Falta lanzar el viewController ... Ojo depende si es Ipad o no. Y dentro de Ipad si es una tableView o ya es un navigator
+         if UIDevice.current.userInterfaceIdiom == .pad {
+            if (vcPadre is UITableViewController){
+                self.vcPadre?.navigationController?.pushViewController(vc, animated: true)
+            }
+            else{
+                let nav : UINavigationController = vcPadre as! UINavigationController
+                nav.pushViewController(vc, animated: true)
+            }
+           
         
+            
+        }
+         else
+        {
+            self.vcPadre?.navigationController?.pushViewController(vc, animated: true)
+        }
    
     }
     

@@ -26,10 +26,26 @@ class ArrayTableViewController<Element>: UITableViewController {
             delegate?.vcPadre = self
         }
         
-      
-
+              
+        //datasource de la vista
+        tableView.dataSource = self.dataSource
+        tableView.delegate = self.delegate
+        
+        self.title = title
+        
+    }
+    
+    init(datasource : ArrayDataSource<Element>, delegate: ArrayTableViewDelegate<Element>?, style: UITableViewStyle, title: String, navControllerIpad : UINavigationController){
         
         
+        self.dataSource = datasource
+        
+        super.init(style: style)
+        
+        if (delegate != nil){
+            self.delegate = delegate
+            delegate?.vcPadre = navControllerIpad //Igual que el otro pero añadiendo como navegaor otro
+        }
         
         
         //datasource de la vista
@@ -39,6 +55,8 @@ class ArrayTableViewController<Element>: UITableViewController {
         self.title = title
         
     }
+
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()

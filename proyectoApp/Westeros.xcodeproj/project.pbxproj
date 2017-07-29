@@ -18,6 +18,9 @@
 		D821CA301F2C8A5000DECC66 /* Jon-Snow_stark.png in Resources */ = {isa = PBXBuildFile; fileRef = D821CA2F1F2C8A5000DECC66 /* Jon-Snow_stark.png */; };
 		D821CA331F2C8EE900DECC66 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821CA311F2C8EE900DECC66 /* CharacterViewController.swift */; };
 		D821CA341F2C8EE900DECC66 /* CharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D821CA321F2C8EE900DECC66 /* CharacterViewController.xib */; };
+		D821CA381F2CA6A700DECC66 /* StartViewControllerIPAD.xib in Resources */ = {isa = PBXBuildFile; fileRef = D821CA371F2CA6A700DECC66 /* StartViewControllerIPAD.xib */; };
+		D821CA3E1F2CAC5200DECC66 /* start2.png in Resources */ = {isa = PBXBuildFile; fileRef = D821CA3D1F2CAC5200DECC66 /* start2.png */; };
+		D821CA411F2CADC800DECC66 /* IpadNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D821CA401F2CADC800DECC66 /* IpadNavViewController.swift */; };
 		D848C9901F1D4A2F0058E4FA /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D848C98E1F1D4A2F0058E4FA /* WikiViewController.swift */; };
 		D848C9911F1D4A2F0058E4FA /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D848C98F1F1D4A2F0058E4FA /* WikiViewController.xib */; };
 		D87D087E1F2BE1F7004A50F5 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D087C1F2BE1F7004A50F5 /* EpisodeViewController.swift */; };
@@ -144,6 +147,9 @@
 		D821CA2F1F2C8A5000DECC66 /* Jon-Snow_stark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jon-Snow_stark.png"; sourceTree = "<group>"; };
 		D821CA311F2C8EE900DECC66 /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		D821CA321F2C8EE900DECC66 /* CharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterViewController.xib; sourceTree = "<group>"; };
+		D821CA371F2CA6A700DECC66 /* StartViewControllerIPAD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewControllerIPAD.xib; sourceTree = "<group>"; };
+		D821CA3D1F2CAC5200DECC66 /* start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start2.png; sourceTree = "<group>"; };
+		D821CA401F2CADC800DECC66 /* IpadNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IpadNavViewController.swift; sourceTree = "<group>"; };
 		D848C98E1F1D4A2F0058E4FA /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		D848C98F1F1D4A2F0058E4FA /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		D87D087C1F2BE1F7004A50F5 /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
@@ -287,12 +293,12 @@
 		D821CA351F2C97E900DECC66 /* NoGenerics */ = {
 			isa = PBXGroup;
 			children = (
+				D821CA3F1F2CADA300DECC66 /* IPAD */,
+				D821CA361F2CA66500DECC66 /* startController */,
 				EDFDFA9D1F14128D00699250 /* HouseViewController.swift */,
 				EDFDFA9E1F14128D00699250 /* HouseViewController.xib */,
 				D848C98E1F1D4A2F0058E4FA /* WikiViewController.swift */,
 				D848C98F1F1D4A2F0058E4FA /* WikiViewController.xib */,
-				D87D09031F2C08F9004A50F5 /* StartViewController.swift */,
-				D87D09041F2C08F9004A50F5 /* StartViewController.xib */,
 				D821CA311F2C8EE900DECC66 /* CharacterViewController.swift */,
 				D821CA321F2C8EE900DECC66 /* CharacterViewController.xib */,
 				D87D087C1F2BE1F7004A50F5 /* EpisodeViewController.swift */,
@@ -300,6 +306,25 @@
 				D87D08801F2BE268004A50F5 /* EpisodesTableViewController.swift */,
 			);
 			name = NoGenerics;
+			sourceTree = "<group>";
+		};
+		D821CA361F2CA66500DECC66 /* startController */ = {
+			isa = PBXGroup;
+			children = (
+				D87D09031F2C08F9004A50F5 /* StartViewController.swift */,
+				D87D09041F2C08F9004A50F5 /* StartViewController.xib */,
+				D821CA371F2CA6A700DECC66 /* StartViewControllerIPAD.xib */,
+				D821CA3D1F2CAC5200DECC66 /* start2.png */,
+			);
+			name = startController;
+			sourceTree = "<group>";
+		};
+		D821CA3F1F2CADA300DECC66 /* IPAD */ = {
+			isa = PBXGroup;
+			children = (
+				D821CA401F2CADC800DECC66 /* IpadNavViewController.swift */,
+			);
+			name = IPAD;
 			sourceTree = "<group>";
 		};
 		D87D08841F2BF312004A50F5 /* capitulos */ = {
@@ -653,6 +678,7 @@
 				D87D09061F2C08F9004A50F5 /* StartViewController.xib in Resources */,
 				D87D08F31F2BFA21004A50F5 /* s4e6.jpg in Resources */,
 				D87D08E91F2BFA21004A50F5 /* s5e6.jpg in Resources */,
+				D821CA3E1F2CAC5200DECC66 /* start2.png in Resources */,
 				D87D08E61F2BFA21004A50F5 /* s5e9.jpg in Resources */,
 				D87D08E31F2BFA21004A50F5 /* s6e2.jpg in Resources */,
 				D87D08B81F2BF598004A50F5 /* s3e4.jpg in Resources */,
@@ -662,6 +688,7 @@
 				D87D08F11F2BFA21004A50F5 /* s4e8.jpg in Resources */,
 				D87D08A11F2BF497004A50F5 /* s2e1.jpg in Resources */,
 				D87D08951F2BF399004A50F5 /* s1e3.jpg in Resources */,
+				D821CA381F2CA6A700DECC66 /* StartViewControllerIPAD.xib in Resources */,
 				D8EEEDAA1F2BB11E00507094 /* default.png in Resources */,
 				D87D09001F2C0752004A50F5 /* silueta.gif in Resources */,
 				D87D08F41F2BFA21004A50F5 /* s4e5.jpg in Resources */,
@@ -713,6 +740,7 @@
 				EDE69E5E1F155D9C00CE93C9 /* UIKitExtensions.swift in Sources */,
 				EDE69E621F15622400CE93C9 /* Repository.swift in Sources */,
 				D87D08811F2BE268004A50F5 /* EpisodesTableViewController.swift in Sources */,
+				D821CA411F2CADC800DECC66 /* IpadNavViewController.swift in Sources */,
 				D8D1667A1F1EAB7C00AAAB30 /* DataSources.swift in Sources */,
 				D848C9901F1D4A2F0058E4FA /* WikiViewController.swift in Sources */,
 			);

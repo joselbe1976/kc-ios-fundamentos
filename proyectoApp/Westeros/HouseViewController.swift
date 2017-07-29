@@ -10,9 +10,6 @@ import UIKit
 
 class HouseViewController: UIViewController {
 
-    @IBOutlet weak var houseNameView: UILabel!
-    
-    @IBOutlet weak var wordsTextView: UILabel!
     
     @IBOutlet weak var sigilImageView: UIImageView!
     
@@ -22,7 +19,7 @@ class HouseViewController: UIViewController {
     init(model: House){
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = model.name
+        self.title = "House " + model.name
         
     }
     
@@ -34,10 +31,7 @@ class HouseViewController: UIViewController {
 
     func syncViewWithModel(){
         // model -> view
-        houseNameView.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
-        wordsTextView.text = model.words
-        
         
     }
     

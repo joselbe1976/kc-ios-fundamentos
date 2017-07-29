@@ -33,43 +33,102 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         
         
-        //portada
-        
-        let vcStart = StartViewController().wrappedInNavigation()
+      
         
         
         
-        //Houses
         
-        let dataSources = DataSources.houseDataSource(model: houses)
-        let houseDelegate = Delegates.housesDelegate(model: houses)
-        let housesVC = ArrayTableViewController(datasource: dataSources, delegate: houseDelegate,  style: .plain, title: "Houses").wrappedInNavigation()
-  
         
-        // Temporadas
+      
         
-        let dataSourceSeason = DataSources.SeasonDataSource(model:seasons )
-        let SeasoNDelegate = Delegates.SeasonsDelegate(model: seasons)
-        let seasonsVC = ArrayTableViewController(datasource: dataSourceSeason, delegate: SeasoNDelegate,  style: .plain, title: "Seasons").wrappedInNavigation()
         
+        
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            
+                //IPAD
+            
+            let vcStart = StartViewController(nibName: "StartViewControllerIPAD", bundle: nil)
+            
+            let globalNav = IpadNavViewController(rootViewController: vcStart)
+            
+            
+            //Houses
+            
+            let dataSources = DataSources.houseDataSource(model: houses)
+            let houseDelegate = Delegates.housesDelegate(model: houses)
+            let housesVC = ArrayTableViewController(datasource: dataSources, delegate: houseDelegate, style: .plain, title: "Houses", navControllerIpad: globalNav).wrappedInNavigation()
+            
+            // Temporadas
+            
+            let dataSourceSeason = DataSources.SeasonDataSource(model:seasons )
+            let SeasoNDelegate = Delegates.SeasonsDelegate(model: seasons)
+            let seasonsVC = ArrayTableViewController(datasource: dataSourceSeason, delegate: SeasoNDelegate,  style: .plain, title: "Seasons", navControllerIpad: globalNav).wrappedInNavigation()
+            
+            
+            
+            let img1 = resizeImage(image: #imageLiteral(resourceName: "house.png"), targetSize: CGSize(width: 25, height: 25))
+            housesVC.tabBarItem = UITabBarItem(title: "Houses", image: img1, selectedImage: nil)
+            
+            let img2 = resizeImage(image: #imageLiteral(resourceName: "capitulos.png"), targetSize: CGSize(width: 25, height: 25))
+            seasonsVC.tabBarItem = UITabBarItem(title: "Seasons", image: img2, selectedImage: nil)
+            
+            let TabVC = UITabBarController()
+            TabVC.viewControllers = [housesVC, seasonsVC]
+
+            
+            //creamos el SplitViewController
+            let splitVC = UISplitViewController()
+            splitVC.viewControllers = [TabVC, globalNav]
+            
+            //faltan delegados del splitView
+            
+            
+            window?.rootViewController = splitVC
+
+            
+        }
+        else{
+                //IPHONE
+            
+            
+            //Houses
+            
+            let dataSources = DataSources.houseDataSource(model: houses)
+            let houseDelegate = Delegates.housesDelegate(model: houses)
+            let housesVC = ArrayTableViewController(datasource: dataSources, delegate: houseDelegate,  style: .plain, title: "Houses").wrappedInNavigation()
+            
+            
+            // Temporadas
+            
+            let dataSourceSeason = DataSources.SeasonDataSource(model:seasons )
+            let SeasoNDelegate = Delegates.SeasonsDelegate(model: seasons)
+            let seasonsVC = ArrayTableViewController(datasource: dataSourceSeason, delegate: SeasoNDelegate,  style: .plain, title: "Seasons").wrappedInNavigation()
+            
+            
+            let vcStart = StartViewController(nibName: "StartViewController", bundle: nil).wrappedInNavigation()
+       
+            
+            vcStart.tabBarItem = UITabBarItem(title: "Credits", image: resizeImage(image: #imageLiteral(resourceName: "yo.png"), targetSize: CGSize(width: 25, height: 25)), selectedImage: nil)
+            
+            
+            let img1 = resizeImage(image: #imageLiteral(resourceName: "house.png"), targetSize: CGSize(width: 25, height: 25))
+            housesVC.tabBarItem = UITabBarItem(title: "Houses", image: img1, selectedImage: nil)
+            
+            let img2 = resizeImage(image: #imageLiteral(resourceName: "capitulos.png"), targetSize: CGSize(width: 25, height: 25))
+            seasonsVC.tabBarItem = UITabBarItem(title: "Seasons", image: img2, selectedImage: nil)
+            
+            let TabVC = UITabBarController()
+            TabVC.viewControllers = [vcStart, housesVC, seasonsVC]
+            
+            // Asignamos el RootVC
+            window?.rootViewController = TabVC
+        }
         
         // Creamos tabBar
     
         
-        vcStart.tabBarItem = UITabBarItem(title: "Credits", image: resizeImage(image: #imageLiteral(resourceName: "yo.png"), targetSize: CGSize(width: 25, height: 25)), selectedImage: nil)
-
-        
-        let img1 = resizeImage(image: #imageLiteral(resourceName: "house.png"), targetSize: CGSize(width: 25, height: 25))
-        housesVC.tabBarItem = UITabBarItem(title: "Houses", image: img1, selectedImage: nil)
-        
-        let img2 = resizeImage(image: #imageLiteral(resourceName: "capitulos.png"), targetSize: CGSize(width: 25, height: 25))
-        seasonsVC.tabBarItem = UITabBarItem(title: "Seasons", image: img2, selectedImage: nil)
-        
-        let TabVC = UITabBarController()
-        TabVC.viewControllers = [vcStart, housesVC, seasonsVC]
-        
-        // Asignamos el RootVC
-        window?.rootViewController = TabVC
+       
         
         
         //apariencia de la App
