@@ -106,10 +106,6 @@ final class LocalFactorySeason : SeasonFactory{
         get{
             // Aquí es donde te creas las Temporadas y sus Episodios
      
-            let defaulImage = UIImage(named: "default.png")! //Imagen por defecto
-            
-            
-            
             
             let temp1 = Season(name: "Season 1", dateSeason: Date.getDateFromString("17/04/2011"), descrip: "You Win or You Die", image: #imageLiteral(resourceName: "s1e1.jpg"))
             

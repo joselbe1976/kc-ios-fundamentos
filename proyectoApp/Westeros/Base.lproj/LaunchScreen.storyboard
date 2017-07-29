@@ -34,6 +34,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pSQ-aq-bxP" firstAttribute="width" relation="lessThanOrEqual" secondItem="UQz-bm-Jgf" secondAttribute="height" multiplier="25:19" id="gfF-XM-gE8"/>
+                                    <constraint firstItem="pSQ-aq-bxP" firstAttribute="leading" secondItem="UQz-bm-Jgf" secondAttribute="leading" id="pVZ-VK-Vxl"/>
                                 </constraints>
                             </stackView>
                         </subviews>
