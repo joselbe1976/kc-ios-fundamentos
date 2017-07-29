@@ -63,7 +63,7 @@ class Seasons: XCTestCase {
     
     func testHouseComparison(){
         
-    //    XCTAssertLessThan(temporadas[0], temporadas[1])
+        XCTAssertLessThan(temporadas[0], temporadas[1])
     }
     
 }

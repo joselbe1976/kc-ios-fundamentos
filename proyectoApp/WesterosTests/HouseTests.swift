@@ -42,9 +42,9 @@ class HouseTests: XCTestCase {
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkUrl)
         lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url:LanisterUrl)
         
-        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-        arya = Person(name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        robb = Person(name: "Edduard", alias: "The hand of the King", house: starkHouse, image: UIImage(named: "edduard_stark.png")!)
+        arya = Person(name: "Arya", alias: "Braavos", house: starkHouse, image: UIImage(named: "arya_stark.png")!)
+        tyrion = Person(name: "Jon Snow", alias: "Commander of the Night's Watch", house: starkHouse, image: UIImage(named: "Jon-Snow_stark.png")!)
         
     
     
@@ -57,7 +57,7 @@ class HouseTests: XCTestCase {
 
     
     func testHouseExistence(){
-         let starkUrl = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
+        let starkUrl = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
         let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkUrl)
         
@@ -85,7 +85,7 @@ class HouseTests: XCTestCase {
         XCTAssertEqual(starkHouse.count, 2)
         
         starkHouse.add(person: tyrion)
-        XCTAssertEqual(starkHouse.count, 2)
+        XCTAssertEqual(starkHouse.count, 3)
         
         
     }

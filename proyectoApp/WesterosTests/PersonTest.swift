@@ -39,9 +39,10 @@ class PersonTest: XCTestCase {
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkUrl)
         lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url: starkUrl)
         
-        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-        arya = Person(name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        robb = Person(name: "Edduard", alias: "The hand of the King", house: starkHouse, image: UIImage(named: "edduard_stark.png")!)
+        arya = Person(name: "Arya", alias: "Braavos", house: starkHouse, image: UIImage(named: "arya_stark.png")!)
+        tyrion = Person(name: "Jon Snow", alias: "Commander of the Night's Watch", house: starkHouse, image: UIImage(named: "Jon-Snow_stark.png")!)
+        
         
 
     }
@@ -59,7 +60,7 @@ class PersonTest: XCTestCase {
     }
     
     func testFullName(){
-        XCTAssertEqual(tyrion.fullName, "Tyrion Lannister")
+        XCTAssertEqual(tyrion.fullName, "Jon Snow Stark")
     }
     
     
@@ -69,7 +70,7 @@ class PersonTest: XCTestCase {
         XCTAssertEqual(tyrion, tyrion)
         
         // Igualdad
-        let imp = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        let imp = Person(name: "Jon Snow", alias: "Commander of the Night's Watch", house: starkHouse, image: UIImage(named: "Jon-Snow_stark.png")!)
         
         XCTAssertEqual(imp, tyrion)
         

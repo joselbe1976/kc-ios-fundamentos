@@ -11,9 +11,15 @@ import XCTest
 @testable import Westeros
 class Episodes: XCTestCase {
     
+    var  temporadas :  [Season]!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        
+        //las Temporadas
+        temporadas = Repository.localSesion.Seasons
+        
     }
     
     override func tearDown() {
@@ -22,9 +28,35 @@ class Episodes: XCTestCase {
     }
     
     func testExistEpisodes() {
-        
-           }
     
+        //todas tenporadas tienen episodios
+        
+        for temp in temporadas {
+            print(temp.name)
+            XCTAssertNotEqual(temp.count, 0)
+            
+        }
+
+    }
+
+    func testEquality(){
+        
+        let tm1 = temporadas[0]
+        let episodiosTm1 = tm1.getSortedEpisodes()
+        
+        XCTAssertNotEqual(episodiosTm1[0], episodiosTm1[1])
+        XCTAssertEqual(episodiosTm1[0], episodiosTm1[0])
+    }
+    
+    func testHashable() {
+        
+        let tm1 = temporadas[0]
+        let episodiosTm1 = tm1.getSortedEpisodes()
+        
+        XCTAssertNotNil(episodiosTm1[0].hashValue)
+        
+    }
+
    
     
 }

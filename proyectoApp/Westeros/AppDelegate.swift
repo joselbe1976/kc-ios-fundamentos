@@ -101,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    // proxy de apariencia
+
     
     // proxy de apariencia. Cambiamos todo los colores de los componentes de la App
     
